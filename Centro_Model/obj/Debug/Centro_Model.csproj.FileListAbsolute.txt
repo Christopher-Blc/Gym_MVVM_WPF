@@ -1,0 +1,12 @@
+C:\Users\Chris\Desktop\Centro_Model\bin\Debug\Centro_Model.dll.config
+C:\Users\Chris\Desktop\Centro_Model\bin\Debug\Centro_Model.dll
+C:\Users\Chris\Desktop\Centro_Model\bin\Debug\Centro_Model.pdb
+C:\Users\Chris\Desktop\Centro_Model\bin\Debug\EntityFramework.dll
+C:\Users\Chris\Desktop\Centro_Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Chris\Desktop\Centro_Model\bin\Debug\EntityFramework.xml
+C:\Users\Chris\Desktop\Centro_Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Chris\Desktop\Centro_Model\obj\Debug\Centro_Model.csproj.AssemblyReference.cache
+C:\Users\Chris\Desktop\Centro_Model\obj\Debug\Centro_Model.csproj.CoreCompileInputs.cache
+C:\Users\Chris\Desktop\Centro_Model\obj\Debug\Centro_M.E8709C09.Up2Date
+C:\Users\Chris\Desktop\Centro_Model\obj\Debug\Centro_Model.dll
+C:\Users\Chris\Desktop\Centro_Model\obj\Debug\Centro_Model.pdb
