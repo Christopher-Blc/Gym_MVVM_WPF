@@ -17,3 +17,14 @@ C:\Users\Chris\Desktop\Trabajo_CentroDeportivo_MVVM\Centro_ViewModel\obj\Debug\C
 C:\Users\Chris\Desktop\Trabajo_CentroDeportivo_MVVM\Centro_ViewModel\obj\Debug\Centro_ViewModel.csproj.CoreCompileInputs.cache
 C:\Users\Chris\Desktop\Trabajo_CentroDeportivo_MVVM\Centro_ViewModel\obj\Debug\Centro_ViewModel.dll
 C:\Users\Chris\Desktop\Trabajo_CentroDeportivo_MVVM\Centro_ViewModel\obj\Debug\Centro_ViewModel.pdb
+C:\Users\Chris\Desktop\Trabajo_CentroDeportivo_MVVM\Centro_ViewModel\bin\Debug\Centro_ViewModel.dll.config
+C:\Users\Chris\Desktop\Trabajo_CentroDeportivo_MVVM\Centro_ViewModel\bin\Debug\Centro_ViewModel.dll
+C:\Users\Chris\Desktop\Trabajo_CentroDeportivo_MVVM\Centro_ViewModel\bin\Debug\Centro_ViewModel.pdb
+C:\Users\Chris\Desktop\Trabajo_CentroDeportivo_MVVM\Centro_ViewModel\bin\Debug\Centro_Model.dll
+C:\Users\Chris\Desktop\Trabajo_CentroDeportivo_MVVM\Centro_ViewModel\bin\Debug\EntityFramework.dll
+C:\Users\Chris\Desktop\Trabajo_CentroDeportivo_MVVM\Centro_ViewModel\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Chris\Desktop\Trabajo_CentroDeportivo_MVVM\Centro_ViewModel\bin\Debug\Centro_Model.pdb
+C:\Users\Chris\Desktop\Trabajo_CentroDeportivo_MVVM\Centro_ViewModel\bin\Debug\Centro_Model.dll.config
+C:\Users\Chris\Desktop\Trabajo_CentroDeportivo_MVVM\Centro_ViewModel\bin\Debug\EntityFramework.xml
+C:\Users\Chris\Desktop\Trabajo_CentroDeportivo_MVVM\Centro_ViewModel\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Chris\Desktop\Trabajo_CentroDeportivo_MVVM\Centro_ViewModel\obj\Debug\Centro_V.41183B12.Up2Date

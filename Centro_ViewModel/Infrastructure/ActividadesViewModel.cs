@@ -9,7 +9,7 @@ namespace Centro_ViewModel.ViewModels
 {
     public class ActividadesViewModel : BaseViewModel
     {
-        // ================== DATOS PARA EL DATAGRID ==================
+        //Listado de las actividades 
         private List<Actividades> listaActividades;
         public List<Actividades> ListaActividades
         {
@@ -21,6 +21,7 @@ namespace Centro_ViewModel.ViewModels
             }
         }
 
+        //obtener la actividad seleccionada del datagrid en la view
         private Actividades actividadSeleccionada;
         public Actividades ActividadSeleccionada
         {
@@ -39,7 +40,7 @@ namespace Centro_ViewModel.ViewModels
             }
         }
 
-        // ================== CAMPOS DEL FORMULARIO ==================
+        //Para obtener el valor de los campos de la view (nombre y aforoMax)
         private string nombre;
         public string Nombre
         {
@@ -55,29 +56,30 @@ namespace Centro_ViewModel.ViewModels
         }
 
 
-        // ================== COMMANDS ==================
+        //Commands que creamos para vincular la accion del boton de la view con la accion definida aqui
         public ICommand AnyadirCommand { get; }
         public ICommand ModificarCommand { get; }
         public ICommand EliminarCommand { get; }
 
         public ActividadesViewModel()
         {
+            //Creamos aqui los comands y le pasamos el metodo que ejecutara
             AnyadirCommand = new RelayCommand(Anyadir);
             ModificarCommand = new RelayCommand(Modificar);
             EliminarCommand = new RelayCommand(Eliminar);
             Recargar();
         }
 
-        // ================== RECARGAR ==================
         private void Recargar()
         {
+            //para cargar las actividades de la BBDD en la lista 
             using (var contexto = new CentroDeportivoEntities())
             {
                 ListaActividades = contexto.Actividades.ToList();
             }
         }
 
-        // ================== AÑADIR ==================
+        //Metodo de añadir que se pasa despues al command
         private void Anyadir()
         {
             if (string.IsNullOrWhiteSpace(Nombre))
@@ -107,7 +109,7 @@ namespace Centro_ViewModel.ViewModels
             LimpiarFormulario();
         }
 
-        // ================== MODIFICAR ==================
+
         private void Modificar()
         {
             if (ActividadSeleccionada == null)
@@ -140,7 +142,7 @@ namespace Centro_ViewModel.ViewModels
             LimpiarFormulario();
         }
 
-        // ================== ELIMINAR ==================
+
         private void Eliminar()
         {
             if (ActividadSeleccionada == null)
@@ -162,7 +164,7 @@ namespace Centro_ViewModel.ViewModels
             LimpiarFormulario();
         }
 
-        // ================== LIMPIAR ==================
+
         private void LimpiarFormulario()
         {
             Nombre = "";

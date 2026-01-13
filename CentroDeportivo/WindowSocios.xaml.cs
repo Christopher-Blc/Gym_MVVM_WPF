@@ -22,6 +22,7 @@ namespace CentroDeportivo
         public WindowSocios()
         {
             InitializeComponent();
+            DataContext = new Centro_ViewModel.Infrastructure.SociosViewModel();
         }
     }
 }

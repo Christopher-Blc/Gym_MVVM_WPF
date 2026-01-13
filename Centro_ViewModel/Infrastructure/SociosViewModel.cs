@@ -1,6 +1,7 @@
 ﻿using Centro_Model;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,40 +10,48 @@ using System.Windows.Input;
 
 namespace Centro_ViewModel.Infrastructure
 {
-    internal class SociosViewModel
+    public class SociosViewModel : BaseViewModel
     {
 
-        // ================== DATOS PARA EL DATAGRID ==================
-        private List<Actividades> listaActividades;
-        public List<Actividades> ListaActividades
+        //Lista de socios y obtener el socio seleccionado del datagrid
+        private List<Socios> listaSocios;
+        public List<Socios> ListaSocios
         {
-            get => listaActividades;
+            get => listaSocios;
             set
             {
-                listaActividades = value;
-                OnPropertyChanged(nameof(ListaActividades));
+                listaSocios = value;
+                OnPropertyChanged(nameof(ListaSocios));
             }
         }
 
-        private Actividades actividadSeleccionada;
-        public Actividades ActividadSeleccionada
+        private Socios socioSeleccionado;
+        public Socios SocioSeleccionado
         {
-            get => actividadSeleccionada;
+            get => socioSeleccionado;
             set
             {
-                actividadSeleccionada = value;
-                OnPropertyChanged(nameof(ActividadSeleccionada));
+                socioSeleccionado = value;
+                OnPropertyChanged(nameof(SocioSeleccionado));
 
                 // Al seleccionar fila, cargamos los TextBox
-                if (actividadSeleccionada != null)
+                if (socioSeleccionado != null)
                 {
-                    Nombre = actividadSeleccionada.Nombre;
-                    AforoMax = actividadSeleccionada.AforoMaximo.ToString();
+                    Nombre = socioSeleccionado.Nombre;
+                    Email = socioSeleccionado.Email;
+                    IsActive = socioSeleccionado.Activo;
+                }
+                else
+                {
+                    Nombre = "";
+                    Email = "";
+                    IsActive = true;
                 }
             }
         }
 
-        // ================== CAMPOS DEL FORMULARIO ==================
+
+        //Campos del formulario
         private string nombre;
         public string Nombre
         {
@@ -50,59 +59,73 @@ namespace Centro_ViewModel.Infrastructure
             set { nombre = value; OnPropertyChanged(nameof(Nombre)); }
         }
 
-        private string aforoMax;
-        public string AforoMax
+        private string email;
+        public string Email
         {
-            get => aforoMax;
-            set { aforoMax = value; OnPropertyChanged(nameof(AforoMax)); }
+            get => email;
+            set { email = value; OnPropertyChanged(nameof(Email)); }
+        }
+
+        private bool isActive;
+        public bool IsActive
+        {
+            get => isActive;
+            set { isActive = value; OnPropertyChanged(nameof(IsActive)); }
         }
 
 
-        // ================== COMMANDS ==================
-        public ICommand AnyadirCommand { get; }
-        public ICommand ModificarCommand { get; }
-        public ICommand EliminarCommand { get; }
+        //Commands
+        public ICommand CrearSocioCommand { get; }
+        public ICommand EditarSocioCommand { get; }
+        public ICommand EliminarSocioCommand { get; }
 
-        public ActividadesViewModel()
+        public SociosViewModel()
         {
-            AnyadirCommand = new RelayCommand(Anyadir);
-            ModificarCommand = new RelayCommand(Modificar);
-            EliminarCommand = new RelayCommand(Eliminar);
+            CrearSocioCommand = new RelayCommand(Crear);
+            EditarSocioCommand = new RelayCommand(Editar);
+            EliminarSocioCommand = new RelayCommand(Eliminar);
+            //Seteamos el isactive al false para evitar comprobaciones innecesarias
+            IsActive = true;
             Recargar();
         }
 
-        // ================== RECARGAR ==================
         private void Recargar()
         {
             using (var contexto = new CentroDeportivoEntities())
             {
-                ListaActividades = contexto.Actividades.ToList();
+                ListaSocios = contexto.Socios.ToList();
             }
         }
 
-        // ================== AÑADIR ==================
-        private void Anyadir()
+        private void Crear()
         {
             if (string.IsNullOrWhiteSpace(Nombre))
             {
-                MessageBox.Show("El nombre no puede estar vacío");
+                MessageBox.Show("El nombre no puede estar vacio");
                 return;
             }
-            if (!int.TryParse(AforoMax, out int aforo) || aforo <= 0)
+            if (string.IsNullOrWhiteSpace(Email))
             {
-                MessageBox.Show("El aforo tiene que ser un numero positivo");
+                MessageBox.Show("El Email no puede estar vacio");
+                return;
+            }
+            if (!(Email.Contains("@")))
+            {
+                MessageBox.Show("El Email no tiene un formato correcto");
                 return;
             }
 
+            //crear el socio con los datos recibidos 
             using (var contexto = new CentroDeportivoEntities())
             {
-                var nueva = new Actividades
+                var nuevo = new Socios
                 {
                     Nombre = Nombre.Trim(),
-                    AforoMaximo = aforo
+                    Email = Email.Trim(),
+                    Activo = IsActive
                 };
 
-                contexto.Actividades.Add(nueva);
+                contexto.Socios.Add(nuevo);
                 contexto.SaveChanges();
             }
 
@@ -110,12 +133,14 @@ namespace Centro_ViewModel.Infrastructure
             LimpiarFormulario();
         }
 
-        // ================== MODIFICAR ==================
-        private void Modificar()
+
+
+        //Metodo para modificar
+        private void Editar()
         {
-            if (ActividadSeleccionada == null)
+            if (SocioSeleccionado == null)
             {
-                MessageBox.Show("Ninguna actividad seleccionada");
+                MessageBox.Show("Ningun socio seleccionada");
                 return;
             }
             if (string.IsNullOrWhiteSpace(Nombre))
@@ -123,19 +148,25 @@ namespace Centro_ViewModel.Infrastructure
                 MessageBox.Show("El nombre no puede estar vacio");
                 return;
             }
-            if (!int.TryParse(AforoMax, out int aforo) || aforo <= 0)
+            if (string.IsNullOrWhiteSpace(Email))
             {
-                MessageBox.Show("El aforo tiene que ser un numero positivo");
+                MessageBox.Show("El Email no puede estar vacio");
+                return;
+            }
+            if (!(Email.Contains("@")))
+            {
+                MessageBox.Show("El Email no tiene un formato correcto");
                 return;
             }
 
             using (var contexto = new CentroDeportivoEntities())
             {
-                var act = contexto.Actividades.Find(ActividadSeleccionada.Id);
-                if (act == null) return;
+                var socioActual = contexto.Socios.Find(SocioSeleccionado.Id);
+                if (socioActual == null) return;
 
-                act.Nombre = Nombre.Trim();
-                act.AforoMaximo = aforo;
+                socioActual.Nombre = Nombre.Trim();
+                socioActual.Email = Email.Trim();
+                socioActual.Activo = IsActive;
                 contexto.SaveChanges();
             }
 
@@ -143,21 +174,20 @@ namespace Centro_ViewModel.Infrastructure
             LimpiarFormulario();
         }
 
-        // ================== ELIMINAR ==================
         private void Eliminar()
         {
-            if (ActividadSeleccionada == null)
+            if (SocioSeleccionado == null)
             {
-                MessageBox.Show("Ninguna actividad seleccionada");
+                MessageBox.Show("Ningun socio seleccionada");
                 return;
             }
 
             using (var contexto = new CentroDeportivoEntities())
             {
-                var act = contexto.Actividades.Find(ActividadSeleccionada.Id);
-                if (act == null) return;
+                var socioActual = contexto.Socios.Find(SocioSeleccionado.Id);
+                if (socioActual == null) return;
 
-                contexto.Actividades.Remove(act);
+                contexto.Socios.Remove(socioActual);
                 contexto.SaveChanges();
             }
 
@@ -165,12 +195,12 @@ namespace Centro_ViewModel.Infrastructure
             LimpiarFormulario();
         }
 
-        // ================== LIMPIAR ==================
         private void LimpiarFormulario()
         {
             Nombre = "";
-            AforoMax = "";
-            ActividadSeleccionada = null;
+            Email = "";
+            SocioSeleccionado = null;
+            IsActive = true;
         }
     }
 }

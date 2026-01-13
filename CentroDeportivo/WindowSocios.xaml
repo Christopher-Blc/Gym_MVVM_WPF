@@ -11,9 +11,17 @@
             <RowDefinition Height="3*"/>
             <RowDefinition Height="214*"/>
         </Grid.RowDefinitions>
-        <DataGrid x:Name="dgSocios" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="28,117,216,36" Background="White" Grid.Row="1"/>
+        <DataGrid 
+            ItemsSource="{Binding  ListaSocios}" 
+            SelectedItem="{Binding  SocioSeleccionado, Mode=TwoWay}"
+            x:Name="dgSocios" 
+            d:ItemsSource="{d:SampleData ItemCount=5}"  
+            Margin="28,117,216,36" 
+            Background="White" 
+            Grid.Row="1"/>
         <TextBlock HorizontalAlignment="Left" Margin="28,18,0,0" TextWrapping="Wrap" Text="Nombre" VerticalAlignment="Top" Height="31" Width="76" FontSize="18" Grid.Row="1"/>
         <Button x:Name="btnAnyadir"
+                Command="{Binding CrearSocioCommand}"
                 Content="Añadir" 
                 HorizontalAlignment="Left" 
                 Margin="468,117,0,0" 
@@ -22,14 +30,74 @@
                 Background="#FFE5E9FF" 
                 FontSize="22" 
                 Grid.Row="1"/>
-        <Button Content="Modificar" HorizontalAlignment="Left" Margin="468,226,0,0" VerticalAlignment="Top" Height="57" Width="173" Background="#FFE5E9FF" FontSize="22" Grid.Row="1"/>
-        <Button x:Name="BtnEliminar" Content="Eliminar" HorizontalAlignment="Left" Margin="468,335,0,0" VerticalAlignment="Top" Height="57" Width="173" Background="#FFE5E9FF" FontSize="22" Grid.Row="1"/>
-        <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Margin="30,54,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="126" Height="30" Background="#FFEDEDED" FontSize="18"/>
+        
+        <Button 
+            Content="Modificar"
+            Command="{Binding EditarSocioCommand}"
+            HorizontalAlignment="Left" 
+            Margin="468,226,0,0" 
+            VerticalAlignment="Top" 
+            Height="57" Width="173" 
+            Background="#FFE5E9FF" 
+            FontSize="22" 
+            Grid.Row="1"/>
+        
+        <Button x:Name="BtnEliminar"
+                Command="{Binding EliminarSocioCommand}"
+                Content="Eliminar" 
+                HorizontalAlignment="Left" 
+                Margin="468,335,0,0" 
+                VerticalAlignment="Top" 
+                Height="57" Width="173" 
+                Background="#FFE5E9FF" 
+                FontSize="22" 
+                Grid.Row="1"/>
+        <TextBox 
+            x:Name="txtNombre" 
+            Text="{Binding Nombre, Mode=TwoWay , UpdateSourceTrigger=PropertyChanged}"
+            HorizontalAlignment="Left" 
+            Margin="30,54,0,0" Grid.Row="1" 
+            TextWrapping="Wrap" 
+            VerticalAlignment="Top" 
+            Width="147" 
+            Height="24" 
+            Background="#FFEDEDED" FontSize="13" FontWeight="Bold"/>
+
+        <TextBox 
+            x:Name="txtEmail"
+            Text="{Binding Email, Mode=TwoWay , UpdateSourceTrigger=PropertyChanged}"
+            HorizontalAlignment="Left" 
+            Margin="194,53,0,0" 
+            Grid.Row="1" 
+            TextWrapping="Wrap" 
+            VerticalAlignment="Top" 
+            Width="160" 
+            Height="22" 
+            Background="#FFEDEDED" 
+            FontSize="13" FontWeight="Bold"/>
+
+
         <TextBlock HorizontalAlignment="Left" Margin="191,19,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Height="31" Width="76" FontSize="18" Grid.Row="1"/>
         <TextBlock HorizontalAlignment="Left" Margin="373,21,0,0" TextWrapping="Wrap" Text="Activo" VerticalAlignment="Top" Height="31" Width="76" FontSize="18" Grid.Row="1"/>
-        <RadioButton x:Name="rdbSi" Content="Si" HorizontalAlignment="Left" Margin="374,57,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="15"/>
-        <RadioButton x:Name="rdbNo" Content="No" HorizontalAlignment="Left" Margin="375,87,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtNombreEmail" HorizontalAlignment="Left" Margin="194,53,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" Height="30" Background="#FFEDEDED" FontSize="18"/>
+        <RadioButton 
+            x:Name="rdbSi"
+            GroupName="EstadoSocio"
+            IsChecked="{Binding IsActive, Mode=TwoWay ,  UpdateSourceTrigger=PropertyChanged}"
+            Content="Si" 
+            HorizontalAlignment="Left" 
+            Margin="374,57,0,0" 
+            Grid.Row="1" 
+            VerticalAlignment="Top" 
+            FontSize="15"/>
+        
+        <RadioButton 
+            x:Name="rdbNo" 
+            GroupName="EstadoSocio"
+            Content="No" 
+            HorizontalAlignment="Left" 
+            Margin="375,87,0,0" 
+            Grid.Row="1" 
+            VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
