@@ -23,7 +23,7 @@ namespace CentroDeportivo
         public WindowActividades()
         {
             InitializeComponent();
-            this.DataContext = new Centro_ViewModel.ViewModels.ActividadesViewModel();
+            this.DataContext = new Centro_ViewModel.Infrastructure.ActividadesViewModel();
         }
     }
 }

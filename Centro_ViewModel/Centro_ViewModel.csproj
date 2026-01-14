@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="Infrastructure\ActividadesViewModel.cs" />
     <Compile Include="Infrastructure\BaseViewModel.cs" />
+    <Compile Include="Infrastructure\ReservasViewModel.cs" />
     <Compile Include="Infrastructure\SociosViewModel.cs" />
     <Compile Include="Infrastructure\RelayCommand.cs" />
     <Compile Include="ViewModel.cs" />

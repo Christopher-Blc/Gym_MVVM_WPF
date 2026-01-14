@@ -6,25 +6,84 @@
         xmlns:local="clr-namespace:CentroDeportivo"
         mc:Ignorable="d"
         Title="WindowReservas" Height="450" Width="660">
-    <Grid Background="#FF64CDFF">
+    <Grid Background="White" Margin="0,0,-140,0">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="80*"/>
-            <ColumnDefinition Width="382*"/>
-            <ColumnDefinition Width="6*"/>
-            <ColumnDefinition Width="141"/>
-            <ColumnDefinition Width="32*"/>
-            <ColumnDefinition Width="19*"/>
+            <ColumnDefinition Width="289*"/>
+            <ColumnDefinition Width="41*"/>
         </Grid.ColumnDefinitions>
-        <DataGrid x:Name="dgReservas" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="28,123,8,36" Background="White" Grid.ColumnSpan="2"/>
-        <ComboBox x:Name="cmbSocios" HorizontalAlignment="Left" Margin="28,72,0,0" VerticalAlignment="Top" Width="120" Height="22" Grid.ColumnSpan="2"/>
-        <ComboBox x:Name="cmbReservas" HorizontalAlignment="Left" Margin="101,72,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.425,0.503" Height="22" Grid.Column="1"/>
+
+        <DataGrid 
+            ItemsSource="{Binding ListaReservas}"
+            SelectedItem="{Binding ActividadSeleccionada , Mode=TwoWay}"
+            x:Name="dgReservas"
+            d:ItemsSource="{d:SampleData ItemCount=5}" 
+            Margin="28,123,156,36" Background="White"/>
+        <ComboBox 
+            DisplayMemberPath="Nombre"
+            SelectedValuePath="Id"
+            ItemsSource="{Binding ListaSocios}"
+            SelectedValue="{Binding SocioSeleccionado , Mode=TwoWay}"
+            x:Name="cmbSocios" 
+            HorizontalAlignment="Left" 
+            Margin="28,72,0,0" 
+            VerticalAlignment="Top"
+            Width="162" Height="22"/>
+
+        <ComboBox 
+            DisplayMemberPath="Nombre"
+            SelectedValuePath="Id"
+            ItemsSource="{Binding ListaActividades}"
+            SelectedValue="{Binding ActividadSeleccionada , Mode=TwoWay}"
+            x:Name="cmbActividades" 
+            HorizontalAlignment="Left" 
+            Margin="232,70,0,0" 
+            VerticalAlignment="Top"
+            Width="153"
+            RenderTransformOrigin="-0.425,0.503"
+            Height="22"/>
         <TextBlock HorizontalAlignment="Left" Margin="28,24,0,0" TextWrapping="Wrap" Text="Socios" VerticalAlignment="Top" Height="31" Width="52" FontSize="18"/>
-        <TextBlock HorizontalAlignment="Left" Margin="101,24,0,0" TextWrapping="Wrap" Text="Actividades" VerticalAlignment="Top" Height="38" Width="120" FontSize="18" Grid.Column="1"/>
-        <DatePicker HorizontalAlignment="Left" Margin="238,70,0,0" VerticalAlignment="Top" Width="136" Height="24" Grid.Column="1"/>
-        <TextBlock HorizontalAlignment="Left" Margin="238,34,0,0" TextWrapping="Wrap" Text="Fecha" VerticalAlignment="Top" Height="28" Width="68" FontSize="18" Grid.Column="1"/>
-        <Button x:Name="btnAnyadir" Content="Añadir" HorizontalAlignment="Left" Margin="0,123,0,0" VerticalAlignment="Top" Height="57" Width="173" Background="#FFE5E9FF" FontSize="22" Grid.ColumnSpan="2" Grid.Column="3"/>
-        <Button Content="Modificar" HorizontalAlignment="Left" Margin="0,232,0,0" VerticalAlignment="Top" Height="57" Width="173" Background="#FFE5E9FF" FontSize="22" Grid.ColumnSpan="2" Grid.Column="3"/>
-        <Button x:Name="BtnEliminar" Content="Eliminar" HorizontalAlignment="Left" Margin="0,341,0,0" VerticalAlignment="Top" Height="57" Width="173" Background="#FFE5E9FF" FontSize="22" Grid.ColumnSpan="2" Grid.Column="3"/>
+        <TextBlock HorizontalAlignment="Left" Margin="232,22,0,0" TextWrapping="Wrap" Text="Actividades" VerticalAlignment="Top" Height="38" Width="120" FontSize="18"/>
+        <DatePicker 
+            SelectedDate="{Binding FechaSeleccionada}"
+            HorizontalAlignment="Left"
+            Margin="409,68,0,0"
+            VerticalAlignment="Top"
+            Width="136"
+            Height="24"/>
+        <TextBlock HorizontalAlignment="Left" Margin="409,32,0,0" TextWrapping="Wrap" Text="Fecha" VerticalAlignment="Top" Height="28" Width="68" FontSize="18"/>
+        <Button
+            x:Name="btnAnyadir"
+            Content="Añadir"
+            Command="{Binding AnyadirCommand}"
+            HorizontalAlignment="Left"
+            Margin="577,122,0,0"
+            VerticalAlignment="Top"
+            Height="57"
+            Width="173"
+            Background="#FFE5E9FF"
+            FontSize="22" Grid.ColumnSpan="2" />
+
+        <Button
+            Content="Modificar"
+            Command="{Binding ModificarCommand}"
+            HorizontalAlignment="Left"
+            Margin="577,231,0,0"
+            VerticalAlignment="Top"
+            Height="57"
+            Width="173"
+            Background="#FFE5E9FF"
+            FontSize="22" Grid.ColumnSpan="2" />
+        <Button
+            x:Name="BtnEliminar"
+            Content="Eliminar"
+            Command="{Binding EliminarCommand}"
+            HorizontalAlignment="Left"
+            Margin="577,340,0,0"
+            VerticalAlignment="Top"
+            Height="57"
+            Width="173"
+            Background="#FFE5E9FF"
+            FontSize="22" Grid.ColumnSpan="2" />
 
     </Grid>
 </Window>

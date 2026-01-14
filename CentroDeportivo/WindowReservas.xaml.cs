@@ -22,6 +22,7 @@ namespace CentroDeportivo
         public WindowReservas()
         {
             InitializeComponent();
+            DataContext = new Centro_ViewModel.Infrastructure.ReservasViewModel();
         }
     }
 }

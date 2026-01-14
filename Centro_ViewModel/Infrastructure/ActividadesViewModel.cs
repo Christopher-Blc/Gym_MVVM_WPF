@@ -5,7 +5,7 @@ using System.Linq;
 using System.Windows.Forms;
 using System.Windows.Input;
 
-namespace Centro_ViewModel.ViewModels
+namespace Centro_ViewModel.Infrastructure
 {
     public class ActividadesViewModel : BaseViewModel
     {

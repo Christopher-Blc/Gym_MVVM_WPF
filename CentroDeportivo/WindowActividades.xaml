@@ -5,67 +5,68 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CentroDeportivo"
         mc:Ignorable="d"
-        Title="WindowActividades" Height="450" Width="671">
-    <Grid>
+        Title="WindowActividades" Height="450" Width="800" ResizeMode="NoResize">
+    <Grid Margin="0,0,2,0">
+
         <DataGrid 
             ItemsSource="{Binding ListaActividades}"
             SelectedItem="{Binding ActividadSeleccionada, Mode=TwoWay}"
             x:Name="dgActividades" 
             d:ItemsSource="{d:SampleData ItemCount=5}" 
-            Margin="28,123,229,36" Background="White"/>
-        <TextBlock HorizontalAlignment="Left" Margin="28,24,0,0" TextWrapping="Wrap" Text="Nombre" VerticalAlignment="Top" Height="31" Width="76" FontSize="18"/>
+            Margin="11,129,221,36" Background="White"/>
+        <TextBlock HorizontalAlignment="Left" Margin="14,27,0,0" TextWrapping="Wrap" Text="Nombre" VerticalAlignment="Top" Height="31" Width="76" FontSize="18"/>
         <Button 
             Command="{Binding AnyadirCommand}"
             x:Name="btnAnyadir" 
             Content="Añadir" 
             HorizontalAlignment="Left" 
-            Margin="468,123,0,0" 
+            Margin="613,125,0,0" 
             VerticalAlignment="Top" 
             Height="57" Width="173" 
             Background="#FFE5E9FF" 
             FontSize="22"/>
-        
+
         <Button 
             Command="{Binding ModificarCommand}"
             Content="Modificar" 
             HorizontalAlignment="Left" 
-            Margin="468,232,0,0" 
+            Margin="613,234,0,0" 
             VerticalAlignment="Top" 
             Height="57" Width="173" 
             Background="#FFE5E9FF" 
             FontSize="22"/>
-        
+
         <Button 
             Command="{Binding EliminarCommand}"
             x:Name="BtnEliminar" 
             Content="Eliminar" 
             HorizontalAlignment="Left" 
-            Margin="468,341,0,0" 
+            Margin="613,343,0,0" 
             VerticalAlignment="Top" 
             Height="57" Width="173" 
             Background="#FFE5E9FF"
             FontSize="22"/>
-        <TextBlock HorizontalAlignment="Left" Margin="237,29,0,0" TextWrapping="Wrap" Text="Aforo Max." VerticalAlignment="Top" Height="31" Width="116" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Left" Margin="338,30,0,0" TextWrapping="Wrap" Text="Aforo Max." VerticalAlignment="Top" Height="31" Width="116" FontSize="18"/>
 
         <TextBox 
             Text="{Binding Nombre, Mode=TwoWay , UpdateSourceTrigger=PropertyChanged}"
             x:Name="txtNombre" 
             HorizontalAlignment="Left" 
-            Margin="30,60,0,0" 
+            Margin="16,63,0,0" 
             TextWrapping="Wrap" 
             VerticalAlignment="Top" 
-            Width="150" Height="30" 
+            Width="191" Height="30" 
             Background="#FFEDEDED" 
             FontSize="18"/>
-        
+
         <TextBox 
             Text="{Binding AforoMax, Mode=TwoWay , UpdateSourceTrigger=PropertyChanged}"
             x:Name="txtAforo" 
             HorizontalAlignment="Left" 
-            Margin="240,63,0,0" 
+            Margin="342,64,0,0" 
             TextWrapping="Wrap" 
             VerticalAlignment="Top" 
-            Width="158" Height="30" 
+            Width="166" Height="30" 
             Background="#FFEDEDED" 
             FontSize="18"/>
 

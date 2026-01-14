@@ -6,37 +6,10 @@
         xmlns:local="clr-namespace:CentroDeportivo"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Grid.Background>
-            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="Black"/>
-                <GradientStop Color="#FF011C8C" Offset="1"/>
-            </LinearGradientBrush>
-        </Grid.Background>
-        <Button Click="BtnSocios_Click" Content="Gestion de socios" HorizontalAlignment="Left" Margin="233,76,0,0" VerticalAlignment="Top" Height="75" Width="282" FontWeight="Bold" FontSize="22">
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF0010FF" Offset="0"/>
-                    <GradientStop Color="#FFBDC1FF" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Background>
-        </Button>
-        <Button Click="BtnReservas_Click" Content="Gestion de reservas" HorizontalAlignment="Left" Margin="233,193,0,0" VerticalAlignment="Top" Height="75" Width="282" FontWeight="Bold" FontSize="22">
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF0010FF" Offset="0"/>
-                    <GradientStop Color="#FFBDC1FF" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Background>
-        </Button>
-        <Button Click="BtnActividades_Click" Content="Gestion de actividades" HorizontalAlignment="Left" Margin="233,311,0,0" VerticalAlignment="Top" Height="75" Width="282" FontWeight="Bold" FontSize="22">
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF0010FF" Offset="0"/>
-                    <GradientStop Color="#FFBDC1FF" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Background>
-        </Button>
+    <Grid Background="White">
+        <Button Click="BtnSocios_Click" Content="Gestion de socios" HorizontalAlignment="Left" Margin="233,76,0,0" VerticalAlignment="Top" Height="75" Width="282" FontWeight="Bold" FontSize="22" Background="#FFC4C9E4"/>
+        <Button Click="BtnReservas_Click" Content="Gestion de reservas" HorizontalAlignment="Left" Margin="233,193,0,0" VerticalAlignment="Top" Height="75" Width="282" FontWeight="Bold" FontSize="22" Background="#FFC4C9E4"/>
+        <Button Click="BtnActividades_Click" Content="Gestion de actividades" HorizontalAlignment="Left" Margin="233,311,0,0" VerticalAlignment="Top" Height="75" Width="282" FontWeight="Bold" FontSize="22" Background="#FFC4C9E4"/>
 
     </Grid>
 </Window>
