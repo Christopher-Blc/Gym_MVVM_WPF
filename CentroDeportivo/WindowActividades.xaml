@@ -10,10 +10,24 @@
 
         <DataGrid 
             ItemsSource="{Binding ListaActividades}"
-            SelectedItem="{Binding ActividadSeleccionada, Mode=TwoWay}"
-            x:Name="dgActividades" 
-            d:ItemsSource="{d:SampleData ItemCount=5}" 
-            Margin="11,129,221,36" Background="White"/>
+            SelectedValue="{Binding ActividadSeleccionada, Mode=TwoWay}"
+            SelectedValuePath="Id"
+            AutoGenerateColumns="False"
+            ColumnWidth="*"
+            CanUserAddRows="False"
+            IsReadOnly="True"
+            AlternationCount="2"
+            RowBackground="White"
+            AlternatingRowBackground="#FFF3F3F3" Margin="21,126,213,33">   
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nombre"
+                            Binding="{Binding Nombre}" />
+                <DataGridTextColumn Header="Aforo"
+                            Binding="{Binding AforoMaximo}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
         <TextBlock HorizontalAlignment="Left" Margin="14,27,0,0" TextWrapping="Wrap" Text="Nombre" VerticalAlignment="Top" Height="31" Width="76" FontSize="18"/>
         <Button 
             Command="{Binding AnyadirCommand}"

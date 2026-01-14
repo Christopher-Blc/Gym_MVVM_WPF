@@ -5,19 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CentroDeportivo"
         mc:Ignorable="d"
-        Title="WindowReservas" Height="450" Width="660">
-    <Grid Background="White" Margin="0,0,-140,0">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="289*"/>
-            <ColumnDefinition Width="41*"/>
-        </Grid.ColumnDefinitions>
+        Title="WindowReservas" Height="450" Width="800">
+    <Grid Background="White">
+       
 
         <DataGrid 
             ItemsSource="{Binding ListaReservas}"
-            SelectedItem="{Binding ActividadSeleccionada , Mode=TwoWay}"
+            SelectedItem="{Binding ReservaSeleccionada, Mode=TwoWay}"
             x:Name="dgReservas"
-            d:ItemsSource="{d:SampleData ItemCount=5}" 
-            Margin="28,123,156,36" Background="White"/>
+            Margin="28,124,243,36"
+            Background="White"
+            AutoGenerateColumns="False"
+            ColumnWidth="*"
+            CanUserAddRows="False"
+            IsReadOnly="True"
+            AlternationCount="2"
+            RowBackground="White"
+            AlternatingRowBackground="#FFF3F3F3">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Socio"
+                        Binding="{Binding SocioId}" />
+                <DataGridTextColumn Header="Actividad"
+                        Binding="{Binding ActividadId}" />
+                <DataGridTextColumn Header="Fecha"
+                        Binding="{Binding Fecha}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+
         <ComboBox 
             DisplayMemberPath="Nombre"
             SelectedValuePath="Id"

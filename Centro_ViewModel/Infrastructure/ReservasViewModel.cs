@@ -135,7 +135,7 @@ namespace Centro_ViewModel.Infrastructure
                 MessageBox.Show("Elige una actividad");
                 return;
             }
-            if (FechaSeleccionada < DateTime.Now)
+            if (FechaSeleccionada < DateTime.Today)
             {
                 MessageBox.Show("La fecha no puede ser anterior a hoy.");
                 return;
@@ -191,7 +191,7 @@ namespace Centro_ViewModel.Infrastructure
                 return;
             }
             var actividad = ListaActividades.FirstOrDefault(a => a.Id == ActividadSeleccionada);
-            if (FechaSeleccionada < DateTime.Now)
+            if (FechaSeleccionada < DateTime.Today)
             {
                 MessageBox.Show("La fecha no puede ser anterior a hoy.");
                 return;

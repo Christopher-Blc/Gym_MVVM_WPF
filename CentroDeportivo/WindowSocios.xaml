@@ -14,12 +14,33 @@
 
 
         <DataGrid 
-            ItemsSource="{Binding  ListaSocios}" 
-            SelectedItem="{Binding  SocioSeleccionado, Mode=TwoWay}"
-            x:Name="dgSocios" 
-            d:ItemsSource="{d:SampleData ItemCount=5}"  
-            Margin="28,117,102,36" 
-            Background="White"/>
+            ItemsSource="{Binding ListaSocios}"
+            SelectedValue="{Binding SocioSeleccionado, Mode=TwoWay}"
+            SelectedValuePath="Id"
+            x:Name="dgSocios"
+            Margin="28,117,102,36"
+            Background="White"
+            AutoGenerateColumns="False"
+            ColumnWidth="*"
+            CanUserAddRows="False"
+            IsReadOnly="True"
+            AlternationCount="2"
+            RowBackground="White"
+            AlternatingRowBackground="#FFF3F3F3">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nombre"
+                            Binding="{Binding Nombre}" />
+
+                <DataGridTextColumn Header="Email"
+                            Binding="{Binding Email}" />
+
+                <DataGridCheckBoxColumn Header="Activo"
+                                Binding="{Binding IsActive}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+
         <TextBlock HorizontalAlignment="Left" Margin="28,18,0,0" TextWrapping="Wrap" Text="Nombre" VerticalAlignment="Top" Height="31" Width="76" FontSize="18"/>
         <Button x:Name="btnAnyadir"
                 Command="{Binding CrearSocioCommand}"

@@ -7,9 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid Background="White">
-        <Button Click="BtnSocios_Click" Content="Gestion de socios" HorizontalAlignment="Left" Margin="233,76,0,0" VerticalAlignment="Top" Height="75" Width="282" FontWeight="Bold" FontSize="22" Background="#FFC4C9E4"/>
-        <Button Click="BtnReservas_Click" Content="Gestion de reservas" HorizontalAlignment="Left" Margin="233,193,0,0" VerticalAlignment="Top" Height="75" Width="282" FontWeight="Bold" FontSize="22" Background="#FFC4C9E4"/>
-        <Button Click="BtnActividades_Click" Content="Gestion de actividades" HorizontalAlignment="Left" Margin="233,311,0,0" VerticalAlignment="Top" Height="75" Width="282" FontWeight="Bold" FontSize="22" Background="#FFC4C9E4"/>
+        <Button Click="BtnSocios_Click" Content="Gestion de socios" HorizontalAlignment="Left" Margin="233,118,0,0" VerticalAlignment="Top" Height="75" Width="282" FontWeight="Bold" FontSize="22" Background="#FFE5E9FF"/>
+        <Button Click="BtnReservas_Click" Content="Gestion de reservas" HorizontalAlignment="Left" Margin="233,215,0,0" VerticalAlignment="Top" Height="75" Width="282" FontWeight="Bold" FontSize="22" Background="#FFE5E9FF"/>
+        <Button Click="BtnActividades_Click" Content="Gestion de actividades" HorizontalAlignment="Left" Margin="233,312,0,0" VerticalAlignment="Top" Height="75" Width="282" FontWeight="Bold" FontSize="22" Background="#FFE5E9FF"/>
+        <Label Content="Gestion de Poli deportivo " HorizontalAlignment="Left" Margin="222,33,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="24" Background="{x:Null}"/>
 
     </Grid>
 </Window>
