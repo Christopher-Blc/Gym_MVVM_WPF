@@ -19,5 +19,5 @@ El proyecto sigue el patrón **MVVM**:
 - **ViewModel**: lógica de presentación y comandos
 
 ## Ubicación del proyecto
-El archivo de solución (`.sln`) se encuentra en la siguiente ruta:
+El archivo de solución (`.sln`) se encuentra en la siguiente carpeta: CentroDeportivo
 
