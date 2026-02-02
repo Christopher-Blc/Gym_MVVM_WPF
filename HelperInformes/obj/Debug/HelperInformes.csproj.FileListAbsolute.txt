@@ -1,0 +1,6 @@
+C:\Users\Chris\Desktop\Trabajo_CentroDeportivo_MVVM\HelperInformes\bin\Debug\HelperInformes.dll
+C:\Users\Chris\Desktop\Trabajo_CentroDeportivo_MVVM\HelperInformes\bin\Debug\HelperInformes.pdb
+C:\Users\Chris\Desktop\Trabajo_CentroDeportivo_MVVM\HelperInformes\obj\Debug\HelperInformes.csproj.AssemblyReference.cache
+C:\Users\Chris\Desktop\Trabajo_CentroDeportivo_MVVM\HelperInformes\obj\Debug\HelperInformes.csproj.CoreCompileInputs.cache
+C:\Users\Chris\Desktop\Trabajo_CentroDeportivo_MVVM\HelperInformes\obj\Debug\HelperInformes.dll
+C:\Users\Chris\Desktop\Trabajo_CentroDeportivo_MVVM\HelperInformes\obj\Debug\HelperInformes.pdb

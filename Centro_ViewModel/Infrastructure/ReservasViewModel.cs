@@ -124,37 +124,21 @@ namespace Centro_ViewModel.Infrastructure
         //Metodo de añadir que se pasa despues al command
         private void Anyadir()
         {
-            var actividad = ListaActividades.FirstOrDefault(a => a.Id == ActividadSeleccionada);
-            if (SocioSeleccionado == -1)
+            //enviamos los datos al metodo que valida y cogemos el error que devuelve si esque haya uno
+            if (!Validaciones.ReservaFormularioValido(
+             SocioSeleccionado,
+             ActividadSeleccionada,
+             FechaSeleccionada,
+             ListaActividades,
+             ListaReservas,
+             out var error
+             ))
             {
-                MessageBox.Show("Elige un socio");
-                return;
-            }
-            if (actividad == null)
-            {
-                MessageBox.Show("Elige una actividad");
-                return;
-            }
-            if (FechaSeleccionada < DateTime.Today)
-            {
-                MessageBox.Show("La fecha no puede ser anterior a hoy.");
+                MessageBox.Show(error);
                 return;
             }
 
-            int cantidadReservas = 0;
-            foreach (var item in ListaReservas)
-            {
-                if (item.ActividadId == ActividadSeleccionada)
-                {
-                    cantidadReservas++;
-                }
-            }
-            if (cantidadReservas >= actividad.AforoMaximo)
-            {
-                MessageBox.Show("El aforo macimo ya se ha llenado");
-                return;
-            }
-
+            //si no hay error , nos crea la reserva
             using (var contexto = new CentroDeportivoEntities())
             {
                 var nueva = new Reservas
@@ -180,34 +164,18 @@ namespace Centro_ViewModel.Infrastructure
                 MessageBox.Show("Por favor , seleccione una reserva.");
                 return;
             }
-            if (SocioSeleccionado == -1)
-            {
-                MessageBox.Show("Elige un socio");
-                return;
-            }
-            if (ActividadSeleccionada == -1)
-            {
-                MessageBox.Show("Elige una actividad");
-                return;
-            }
-            var actividad = ListaActividades.FirstOrDefault(a => a.Id == ActividadSeleccionada);
-            if (FechaSeleccionada < DateTime.Today)
-            {
-                MessageBox.Show("La fecha no puede ser anterior a hoy.");
-                return;
-            }
 
-            int cantidadReservas = 0;
-            foreach (var item in ListaReservas)
+            if (!Validaciones.ReservaFormularioValido(
+                    SocioSeleccionado,
+                    ActividadSeleccionada,
+                    FechaSeleccionada,
+                    ListaActividades,
+                    ListaReservas,
+                    out var error,
+                    reservaIdExcluida: ReservaSeleccionada.Id
+                ))
             {
-                if (item.ActividadId == ActividadSeleccionada && item.Id != ReservaSeleccionada.Id)
-                {
-                    cantidadReservas++;
-                }
-            }
-            if (cantidadReservas >= actividad.AforoMaximo)
-            {
-                MessageBox.Show("El aforo macimo ya se ha llenado");
+                MessageBox.Show(error);
                 return;
             }
 

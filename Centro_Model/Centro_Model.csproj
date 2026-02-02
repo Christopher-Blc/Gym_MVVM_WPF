@@ -56,7 +56,21 @@
     <Compile Include="Actividades.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model.cs" />
+    <Compile Include="DsInforme2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsInforme2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DsInforme3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsInforme3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DsInformes1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsInformes1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -86,6 +100,39 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="DsInforme2.xsc">
+      <DependentUpon>DsInforme2.xsd</DependentUpon>
+    </None>
+    <None Include="DsInforme2.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsInforme2.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DsInforme2.xss">
+      <DependentUpon>DsInforme2.xsd</DependentUpon>
+    </None>
+    <None Include="DsInforme3.xsc">
+      <DependentUpon>DsInforme3.xsd</DependentUpon>
+    </None>
+    <None Include="DsInforme3.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsInforme3.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DsInforme3.xss">
+      <DependentUpon>DsInforme3.xsd</DependentUpon>
+    </None>
+    <None Include="DsInformes1.xsc">
+      <DependentUpon>DsInformes1.xsd</DependentUpon>
+    </None>
+    <None Include="DsInformes1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsInformes1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DsInformes1.xss">
+      <DependentUpon>DsInformes1.xsd</DependentUpon>
+    </None>
     <None Include="Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>

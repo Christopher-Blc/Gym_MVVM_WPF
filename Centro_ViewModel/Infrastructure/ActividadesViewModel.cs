@@ -82,14 +82,9 @@ namespace Centro_ViewModel.Infrastructure
         //Metodo de añadir que se pasa despues al command
         private void Anyadir()
         {
-            if (string.IsNullOrWhiteSpace(Nombre))
+            if (!Validaciones.ActividadFormularioValido(Nombre, AforoMax, out var error, out var aforo))
             {
-                MessageBox.Show("El nombre no puede estar vacío");
-                return;
-            }
-            if (!int.TryParse(AforoMax, out int aforo) || aforo <= 0)
-            {
-                MessageBox.Show("El aforo tiene que ser un numero positivo");
+                MessageBox.Show(error);
                 return;
             }
 
@@ -97,7 +92,7 @@ namespace Centro_ViewModel.Infrastructure
             {
                 var nueva = new Actividades
                 {
-                    Nombre = Nombre.Trim(),
+                    Nombre = Validaciones.LimpiarTexto(Nombre),
                     AforoMaximo = aforo
                 };
 
@@ -117,14 +112,10 @@ namespace Centro_ViewModel.Infrastructure
                 MessageBox.Show("Ninguna actividad seleccionada");
                 return;
             }
-            if (string.IsNullOrWhiteSpace(Nombre))
+
+            if (!Validaciones.ActividadFormularioValido(Nombre, AforoMax, out var error, out var aforo))
             {
-                MessageBox.Show("El nombre no puede estar vacio");
-                return;
-            }
-            if (!int.TryParse(AforoMax, out int aforo) || aforo <= 0)
-            {
-                MessageBox.Show("El aforo tiene que ser un numero positivo");
+                MessageBox.Show(error);
                 return;
             }
 
@@ -133,7 +124,7 @@ namespace Centro_ViewModel.Infrastructure
                 var act = contexto.Actividades.Find(ActividadSeleccionada.Id);
                 if (act == null) return;
 
-                act.Nombre = Nombre.Trim();
+                act.Nombre = Validaciones.LimpiarTexto(Nombre);
                 act.AforoMaximo = aforo;
                 contexto.SaveChanges();
             }

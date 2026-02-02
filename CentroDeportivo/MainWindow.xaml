@@ -7,10 +7,17 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid Background="White">
-        <Button Click="BtnSocios_Click" Content="Gestion de socios" HorizontalAlignment="Left" Margin="233,118,0,0" VerticalAlignment="Top" Height="75" Width="282" FontWeight="Bold" FontSize="22" Background="#FFE5E9FF"/>
-        <Button Click="BtnReservas_Click" Content="Gestion de reservas" HorizontalAlignment="Left" Margin="233,215,0,0" VerticalAlignment="Top" Height="75" Width="282" FontWeight="Bold" FontSize="22" Background="#FFE5E9FF"/>
-        <Button Click="BtnActividades_Click" Content="Gestion de actividades" HorizontalAlignment="Left" Margin="233,312,0,0" VerticalAlignment="Top" Height="75" Width="282" FontWeight="Bold" FontSize="22" Background="#FFE5E9FF"/>
-        <Label Content="Gestion de Poli deportivo " HorizontalAlignment="Left" Margin="222,33,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="24" Background="{x:Null}"/>
-
+        <Button Click="BtnSocios_Click" Content="Gestion de socios" HorizontalAlignment="Left" Margin="100,113,0,0" VerticalAlignment="Top" Height="75" Width="282" FontWeight="Bold" FontSize="22" Background="#FFE5E9FF"/>
+        <Button Click="BtnReservas_Click" Content="Gestion de reservas" HorizontalAlignment="Left" Margin="100,210,0,0" VerticalAlignment="Top" Height="75" Width="282" FontWeight="Bold" FontSize="22" Background="#FFE5E9FF"/>
+        <Button Click="BtnActividades_Click" Content="Gestion de actividades" HorizontalAlignment="Left" Margin="100,307,0,0" VerticalAlignment="Top" Height="75" Width="282" FontWeight="Bold" FontSize="22" Background="#FFE5E9FF"/>
+        <Label Content="Gestion de Poli deportivo " HorizontalAlignment="Left" Margin="89,30,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="24" Background="{x:Null}"/>
+        <Button Click="BtnInforme1_Click" Content="Ver Informe 1" HorizontalAlignment="Left" Margin="525,115,0,0" VerticalAlignment="Top" Height="75" Width="195" FontWeight="Bold" FontSize="22" Background="#FFE5E9FF"/>
+        <Label Content="Informes: " HorizontalAlignment="Left" Margin="558,35,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="24" Background="{x:Null}"/>
+        <Button Click="BtnInforme2_Click" Content="Ver Informe 2" HorizontalAlignment="Left" Margin="526,247,0,0" VerticalAlignment="Top" Height="42" Width="197" FontWeight="Bold" FontSize="22" Background="#FFE5E9FF"/>
+        <Button Click="BtnInforme3_Click" Content="Ver Informe 3" HorizontalAlignment="Left" Margin="527,310,0,0" VerticalAlignment="Top" Height="75" Width="195" FontWeight="Bold" FontSize="22" Background="#FFE5E9FF"/>
+        <ComboBox ItemsSource="{Binding Actividades}"
+          DisplayMemberPath="Nombre"
+          SelectedValuePath="Id"
+          SelectedValue="{Binding ActividadSeleccionadaId}" Margin="527,205,60,170"/>
     </Grid>
 </Window>

@@ -34,6 +34,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win64_x64\dotnet\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\CentroDeportivo\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -53,22 +57,65 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DsInforme2.Designer.cs">
+      <DependentUpon>DsInforme2.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DsInformes.Designer.cs">
+      <DependentUpon>DsInformes.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Helper.cs" />
+    <Compile Include="Infrastructure\Informe1ViewModel.cs" />
+    <Compile Include="Infrastructure\Informe2ViewModel.cs" />
     <Compile Include="Infrastructure\ActividadesViewModel.cs" />
     <Compile Include="Infrastructure\BaseViewModel.cs" />
+    <Compile Include="Infrastructure\Informe3ViewModel.cs" />
+    <Compile Include="Infrastructure\MainWindowViewModel.cs" />
     <Compile Include="Infrastructure\ReservasViewModel.cs" />
     <Compile Include="Infrastructure\SociosViewModel.cs" />
     <Compile Include="Infrastructure\RelayCommand.cs" />
+    <Compile Include="Model.cs" />
+    <Compile Include="Validaciones.cs" />
     <Compile Include="ViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="DsInforme2.xsc">
+      <DependentUpon>DsInforme2.xsd</DependentUpon>
+    </None>
+    <None Include="DsInforme2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsInforme2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DsInforme2.xss">
+      <DependentUpon>DsInforme2.xsd</DependentUpon>
+    </None>
+    <None Include="DsInformes.xsc">
+      <DependentUpon>DsInformes.xsd</DependentUpon>
+    </None>
+    <None Include="DsInformes.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsInformes.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DsInformes.xss">
+      <DependentUpon>DsInformes.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Centro_Model\Centro_Model.csproj">
       <Project>{5c1fec53-239b-4d8d-b4cf-899eafd4a572}</Project>
       <Name>Centro_Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CrystalReportWpfCentroDeportivo\Informes.csproj">
+      <Project>{b2621543-0493-4886-8ee8-0e9e262a728d}</Project>
+      <Name>Informes</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

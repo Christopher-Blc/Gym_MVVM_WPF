@@ -99,29 +99,18 @@ namespace Centro_ViewModel.Infrastructure
 
         private void Crear()
         {
-            if (string.IsNullOrWhiteSpace(Nombre))
+            if (!Validaciones.SocioFormularioValido(Nombre, Email, out var error))
             {
-                MessageBox.Show("El nombre no puede estar vacio");
-                return;
-            }
-            if (string.IsNullOrWhiteSpace(Email))
-            {
-                MessageBox.Show("El Email no puede estar vacio");
-                return;
-            }
-            if (!(Email.Contains("@")))
-            {
-                MessageBox.Show("El Email no tiene un formato correcto");
+                MessageBox.Show(error);
                 return;
             }
 
-            //crear el socio con los datos recibidos 
             using (var contexto = new CentroDeportivoEntities())
             {
                 var nuevo = new Socios
                 {
-                    Nombre = Nombre.Trim(),
-                    Email = Email.Trim(),
+                    Nombre = Validaciones.LimpiarTexto(Nombre),
+                    Email = Validaciones.LimpiarTexto(Email),
                     Activo = IsActive
                 };
 
@@ -143,19 +132,10 @@ namespace Centro_ViewModel.Infrastructure
                 MessageBox.Show("Ningun socio seleccionada");
                 return;
             }
-            if (string.IsNullOrWhiteSpace(Nombre))
+
+            if (!Validaciones.SocioFormularioValido(Nombre, Email, out var error))
             {
-                MessageBox.Show("El nombre no puede estar vacio");
-                return;
-            }
-            if (string.IsNullOrWhiteSpace(Email))
-            {
-                MessageBox.Show("El Email no puede estar vacio");
-                return;
-            }
-            if (!(Email.Contains("@")))
-            {
-                MessageBox.Show("El Email no tiene un formato correcto");
+                MessageBox.Show(error);
                 return;
             }
 
@@ -164,8 +144,8 @@ namespace Centro_ViewModel.Infrastructure
                 var socioActual = contexto.Socios.Find(SocioSeleccionado.Id);
                 if (socioActual == null) return;
 
-                socioActual.Nombre = Nombre.Trim();
-                socioActual.Email = Email.Trim();
+                socioActual.Nombre = Validaciones.LimpiarTexto(Nombre);
+                socioActual.Email = Validaciones.LimpiarTexto(Email);
                 socioActual.Activo = IsActive;
                 contexto.SaveChanges();
             }

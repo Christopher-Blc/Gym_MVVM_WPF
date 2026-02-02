@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\CentroDeportivo",
+    "\\CrystalReportWpfCentroDeportivo"
   ],
+  "SelectedNode": "\\CrystalReportWpfCentroDeportivo\\Window1.xaml",
   "PreviewInSolutionExplorer": false
 }

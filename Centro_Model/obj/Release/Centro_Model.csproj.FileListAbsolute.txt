@@ -1,0 +1,12 @@
+C:\Users\Chris\Desktop\Trabajo_CentroDeportivo_MVVM\Centro_Model\bin\Release\Centro_Model.dll.config
+C:\Users\Chris\Desktop\Trabajo_CentroDeportivo_MVVM\Centro_Model\bin\Release\Centro_Model.dll
+C:\Users\Chris\Desktop\Trabajo_CentroDeportivo_MVVM\Centro_Model\bin\Release\Centro_Model.pdb
+C:\Users\Chris\Desktop\Trabajo_CentroDeportivo_MVVM\Centro_Model\bin\Release\EntityFramework.dll
+C:\Users\Chris\Desktop\Trabajo_CentroDeportivo_MVVM\Centro_Model\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Chris\Desktop\Trabajo_CentroDeportivo_MVVM\Centro_Model\bin\Release\EntityFramework.xml
+C:\Users\Chris\Desktop\Trabajo_CentroDeportivo_MVVM\Centro_Model\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Chris\Desktop\Trabajo_CentroDeportivo_MVVM\Centro_Model\obj\Release\Centro_Model.csproj.AssemblyReference.cache
+C:\Users\Chris\Desktop\Trabajo_CentroDeportivo_MVVM\Centro_Model\obj\Release\Centro_Model.csproj.CoreCompileInputs.cache
+C:\Users\Chris\Desktop\Trabajo_CentroDeportivo_MVVM\Centro_Model\obj\Release\Centro_M.E8709C09.Up2Date
+C:\Users\Chris\Desktop\Trabajo_CentroDeportivo_MVVM\Centro_Model\obj\Release\Centro_Model.dll
+C:\Users\Chris\Desktop\Trabajo_CentroDeportivo_MVVM\Centro_Model\obj\Release\Centro_Model.pdb

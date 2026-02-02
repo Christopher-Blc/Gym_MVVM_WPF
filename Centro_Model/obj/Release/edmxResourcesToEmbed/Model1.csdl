@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CentroDeportivoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Actividades">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AforoMaximo" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Reservas" Relationship="Self.FK_Reservas_Actividades" FromRole="Actividades" ToRole="Reservas" />
+  </EntityType>
+  <EntityType Name="Reservas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SocioId" Type="Int32" Nullable="false" />
+    <Property Name="ActividadId" Type="Int32" Nullable="false" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Actividades" Relationship="Self.FK_Reservas_Actividades" FromRole="Reservas" ToRole="Actividades" />
+    <NavigationProperty Name="Socios" Relationship="Self.FK_Reservas_Socios" FromRole="Reservas" ToRole="Socios" />
+  </EntityType>
+  <EntityType Name="Socios">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Activo" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Reservas" Relationship="Self.FK_Reservas_Socios" FromRole="Socios" ToRole="Reservas" />
+  </EntityType>
+  <Association Name="FK_Reservas_Actividades">
+    <End Role="Actividades" Type="Self.Actividades" Multiplicity="1" />
+    <End Role="Reservas" Type="Self.Reservas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Actividades">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Reservas">
+        <PropertyRef Name="ActividadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reservas_Socios">
+    <End Role="Socios" Type="Self.Socios" Multiplicity="1" />
+    <End Role="Reservas" Type="Self.Reservas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Socios">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Reservas">
+        <PropertyRef Name="SocioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CentroDeportivoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Actividades" EntityType="Self.Actividades" />
+    <EntitySet Name="Reservas" EntityType="Self.Reservas" />
+    <EntitySet Name="Socios" EntityType="Self.Socios" />
+    <AssociationSet Name="FK_Reservas_Actividades" Association="Self.FK_Reservas_Actividades">
+      <End Role="Actividades" EntitySet="Actividades" />
+      <End Role="Reservas" EntitySet="Reservas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reservas_Socios" Association="Self.FK_Reservas_Socios">
+      <End Role="Socios" EntitySet="Socios" />
+      <End Role="Reservas" EntitySet="Reservas" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
