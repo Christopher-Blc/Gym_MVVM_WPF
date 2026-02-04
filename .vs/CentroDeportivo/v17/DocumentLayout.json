@@ -1,7 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Chris\\Desktop\\Trabajo_CentroDeportivo_MVVM\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\Chris\\Desktop\\borrar\\Gym_MVVM_WPF\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|Informes||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|Centro_View||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|HelperInformes||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2621543-0493-4886-8EE8-0E9E262A728D}|..\\..\\Trabajo_CentroDeportivo_MVVM\\CrystalReportWpfCentroDeportivo\\Informes.csproj|c:\\users\\chris\\desktop\\trabajo_centrodeportivo_mvvm\\crystalreportwpfcentrodeportivo\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|5e9a8ac2-4f34-4521-858f-4c248ba31532"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{08061305-466C-4D1E-B199-73F2C3989F63}|..\\..\\Trabajo_CentroDeportivo_MVVM\\HelperInformes\\HelperInformes.csproj|c:\\users\\chris\\desktop\\trabajo_centrodeportivo_mvvm\\helperinformes\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|5e9a8ac2-4f34-4521-858f-4c248ba31532"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A84B22C-2FCE-4DF6-87E9-0461CDE79E8C}|..\\..\\Trabajo_CentroDeportivo_MVVM\\CentroDeportivo\\Centro_View.csproj|c:\\users\\chris\\desktop\\trabajo_centrodeportivo_mvvm\\centrodeportivo\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|cc4014f5-b18d-439c-9352-f99d984cca85"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +28,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -18,6 +37,50 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Centro_View",
+              "DocumentMoniker": "C:\\Users\\Chris\\Desktop\\Trabajo_CentroDeportivo_MVVM\\CentroDeportivo\\Centro_View.csproj",
+              "RelativeDocumentMoniker": "..\\..\\Trabajo_CentroDeportivo_MVVM\\CentroDeportivo\\Centro_View.csproj",
+              "ToolTip": "C:\\Users\\Chris\\Desktop\\Trabajo_CentroDeportivo_MVVM\\CentroDeportivo\\Centro_View.csproj",
+              "RelativeToolTip": "..\\..\\Trabajo_CentroDeportivo_MVVM\\CentroDeportivo\\Centro_View.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-04T22:37:13.643Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HelperInformes",
+              "DocumentMoniker": "C:\\Users\\Chris\\Desktop\\Trabajo_CentroDeportivo_MVVM\\HelperInformes\\HelperInformes.csproj",
+              "RelativeDocumentMoniker": "..\\..\\Trabajo_CentroDeportivo_MVVM\\HelperInformes\\HelperInformes.csproj",
+              "ToolTip": "C:\\Users\\Chris\\Desktop\\Trabajo_CentroDeportivo_MVVM\\HelperInformes\\HelperInformes.csproj",
+              "RelativeToolTip": "..\\..\\Trabajo_CentroDeportivo_MVVM\\HelperInformes\\HelperInformes.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-04T22:36:58.106Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Informes",
+              "DocumentMoniker": "C:\\Users\\Chris\\Desktop\\Trabajo_CentroDeportivo_MVVM\\CrystalReportWpfCentroDeportivo\\Informes.csproj",
+              "RelativeDocumentMoniker": "..\\..\\Trabajo_CentroDeportivo_MVVM\\CrystalReportWpfCentroDeportivo\\Informes.csproj",
+              "ToolTip": "C:\\Users\\Chris\\Desktop\\Trabajo_CentroDeportivo_MVVM\\CrystalReportWpfCentroDeportivo\\Informes.csproj",
+              "RelativeToolTip": "..\\..\\Trabajo_CentroDeportivo_MVVM\\CrystalReportWpfCentroDeportivo\\Informes.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-04T22:34:29.419Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
             }
           ]
         }

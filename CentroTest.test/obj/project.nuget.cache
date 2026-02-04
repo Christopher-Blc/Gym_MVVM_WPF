@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "O4Hj1BKwXlg=",
+  "dgSpecHash": "NCBj9pOnH1w=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Chris\\Desktop\\Trabajo_CentroDeportivo_MVVM\\CentroTest.test\\CentroTest.test.csproj",
+  "projectFilePath": "C:\\Users\\Chris\\Desktop\\borrar\\Gym_MVVM_WPF\\CentroTest.test\\CentroTest.test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Chris\\.nuget\\packages\\microsoft.applicationinsights\\2.22.0\\microsoft.applicationinsights.2.22.0.nupkg.sha512",
     "C:\\Users\\Chris\\.nuget\\packages\\microsoft.codecoverage\\17.12.0\\microsoft.codecoverage.17.12.0.nupkg.sha512",

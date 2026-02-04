@@ -1,0 +1,29 @@
+{
+  "metadata": [
+    {
+      "src": [
+        { "files": [ "CentroDeportivo/Centro_View.csproj" ] },
+        { "files": [ "Centro_Model/Centro_Model.csproj" ] },
+        { "files": [ "Centro_ViewModel/Centro_ViewModel.csproj" ] },
+        { "files": [ "CentroTest.test/CentroTest.test.csproj" ] },
+        { "files": [ "CrystalReportWpfCentroDeportivo/Informes.csproj" ] },
+        { "files": [ "HelperInformes/HelperInformes.csproj" ] }
+      ],
+      "exclude": [
+        "**/Properties/AssemblyInfo.cs",
+        "**/bin/**",
+        "**/obj/**",
+        "**/packages/**",
+        "**/TestResults/**"
+      ],
+      "dest": "api"
+    }
+  ],
+  "build": {
+    "content": [
+      { "files": [ "index.md", "toc.yml", "api/**.yml", "api/index.md" ] }
+    ],
+    "output": "_site",
+    "template": [ "default", "modern" ]
+  }
+}

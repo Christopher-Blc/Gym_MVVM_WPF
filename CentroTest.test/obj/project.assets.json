@@ -1708,11 +1708,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Chris\\Desktop\\Trabajo_CentroDeportivo_MVVM\\CentroTest.test\\CentroTest.test.csproj",
+      "projectUniqueName": "C:\\Users\\Chris\\Desktop\\borrar\\Gym_MVVM_WPF\\CentroTest.test\\CentroTest.test.csproj",
       "projectName": "CentroTest.test",
-      "projectPath": "C:\\Users\\Chris\\Desktop\\Trabajo_CentroDeportivo_MVVM\\CentroTest.test\\CentroTest.test.csproj",
+      "projectPath": "C:\\Users\\Chris\\Desktop\\borrar\\Gym_MVVM_WPF\\CentroTest.test\\CentroTest.test.csproj",
       "packagesPath": "C:\\Users\\Chris\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Chris\\Desktop\\Trabajo_CentroDeportivo_MVVM\\CentroTest.test\\obj\\",
+      "outputPath": "C:\\Users\\Chris\\Desktop\\borrar\\Gym_MVVM_WPF\\CentroTest.test\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1733,8 +1733,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Chris\\Desktop\\Trabajo_CentroDeportivo_MVVM\\Centro_ViewModel\\Centro_ViewModel.csproj": {
-              "projectPath": "C:\\Users\\Chris\\Desktop\\Trabajo_CentroDeportivo_MVVM\\Centro_ViewModel\\Centro_ViewModel.csproj"
+            "C:\\Users\\Chris\\Desktop\\borrar\\Gym_MVVM_WPF\\Centro_ViewModel\\Centro_ViewModel.csproj": {
+              "projectPath": "C:\\Users\\Chris\\Desktop\\borrar\\Gym_MVVM_WPF\\Centro_ViewModel\\Centro_ViewModel.csproj"
             }
           }
         }
