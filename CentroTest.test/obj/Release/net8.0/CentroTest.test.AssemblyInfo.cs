@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CentroTest.test")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cc388ada26c1ad392b36c518c3edc883c2962cad")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+27b3681b3186448d058c4c8d65d5a28aafebde60")]
 [assembly: System.Reflection.AssemblyProductAttribute("CentroTest.test")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CentroTest.test")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

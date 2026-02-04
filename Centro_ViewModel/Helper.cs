@@ -10,10 +10,18 @@ using System.Threading.Tasks;
 
 namespace Centro_ViewModel
 {
+    /// <summary>
+    /// Clase helper para obtener datos directos desde la base de datos
+    /// y construir DataSets usados en los informes.
+    /// </summary>
     public class Helper
     {
-        
         private string conexion = "Server=CHRIS-PC\\SQLEXPRESS;Database=CentroDeportivo;Trusted_Connection=True;";
+
+        /// <summary>
+        /// Obtiene el dataset con los datos de los socios para el Informe1.
+        /// </summary>
+        /// <returns>Instancia de DsInformes1 con los registros de socios.</returns>
         public DsInformes1 DatosInforme1()
         {
             var ds = new DsInformes1();
@@ -41,6 +49,11 @@ namespace Centro_ViewModel
 
         }
 
+        /// <summary>
+        /// Obtiene el dataset para Informe2 filtrado por una actividad.
+        /// </summary>
+        /// <param name="idActividad">Id de la actividad para filtrar el informe.</param>
+        /// <returns>Instancia de DsInforme2 con los registros correspondientes.</returns>
         public DsInforme2 DatosInforme2(int idActividad)
         {
             var ds = new DsInforme2();
@@ -81,6 +94,10 @@ namespace Centro_ViewModel
             return ds;
         }
 
+        /// <summary>
+        /// Obtiene una lista de actividades (Id y Nombre) para uso en bindings.
+        /// </summary>
+        /// <returns>Lista de Actividades con Id y Nombre cargados.</returns>
         public List<Actividades> GetActividades()
         {
             var lista = new List<Actividades>();
@@ -107,6 +124,10 @@ namespace Centro_ViewModel
             return lista;
         }
 
+        /// <summary>
+        /// Obtiene el dataset con los datos necesarios para el Informe3.
+        /// </summary>
+        /// <returns>Instancia de DsInforme3 con los registros de reservas para el informe.</returns>
         public DsInforme3 DatosInforme3()
         {
             var ds = new DsInforme3();
@@ -144,7 +165,6 @@ namespace Centro_ViewModel
 
 
     }
-
 
 
 

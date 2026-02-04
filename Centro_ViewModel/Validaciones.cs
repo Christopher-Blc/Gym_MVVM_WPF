@@ -8,9 +8,19 @@ using System.Threading.Tasks;
 
 namespace Centro_ViewModel
 {
+    /// <summary>
+    /// Clase con metodos de validacion usados por los viewmodels.
+    /// Contiene validaciones de socios, reservas y actividades.
+    /// </summary>
     public class Validaciones
     {
         //VAlidaciones para socios
+        /// <summary>
+        /// Valida el nombre de un socio.
+        /// </summary>
+        /// <param name="nombre">Nombre a validar.</param>
+        /// <param name="error">Mensaje de error devuelto si no es valido.</param>
+        /// <returns>True si el nombre es valido, false en caso contrario.</returns>
         public static bool NombreValido(string nombre, out string error)
         {
             error = "";
@@ -30,6 +40,12 @@ namespace Centro_ViewModel
             return true;
         }
 
+        /// <summary>
+        /// Valida el formato basico de un email.
+        /// </summary>
+        /// <param name="email">Email a validar.</param>
+        /// <param name="error">Mensaje de error devuelto si no es valido.</param>
+        /// <returns>True si el email es valido, false en caso contrario.</returns>
         public static bool EmailValido(string email, out string error)
         {
             error = "";
@@ -54,6 +70,13 @@ namespace Centro_ViewModel
             return true;
         }
 
+        /// <summary>
+        /// Valida el formulario de socio combinando validaciones de nombre y email.
+        /// </summary>
+        /// <param name="nombre">Nombre a validar.</param>
+        /// <param name="email">Email a validar.</param>
+        /// <param name="error">Mensaje de error devuelto si no es valido.</param>
+        /// <returns>True si el formulario es valido, false en caso contrario.</returns>
         public static bool SocioFormularioValido(string nombre, string email, out string error)
         {
             error = "";
@@ -64,12 +87,28 @@ namespace Centro_ViewModel
             return true;
         }
 
+        /// <summary>
+        /// Limpia un texto eliminando espacios alrededor o devolviendo cadena vacia si es nulo o whitespace.
+        /// </summary>
+        /// <param name="texto">Texto a limpiar.</param>
+        /// <returns>Texto limpio o cadena vacia.</returns>
         public static string LimpiarTexto(string texto)
         {
             return string.IsNullOrWhiteSpace(texto) ? "" : texto.Trim();
         }
 
         //Validaciones para reservas 
+        /// <summary>
+        /// Valida los datos para crear o modificar una reserva.
+        /// </summary>
+        /// <param name="socioId">Id del socio seleccionado.</param>
+        /// <param name="actividadId">Id de la actividad seleccionada.</param>
+        /// <param name="fecha">Fecha de la reserva.</param>
+        /// <param name="listaActividades">Lista de actividades disponibles.</param>
+        /// <param name="listaReservas">Lista de reservas existentes.</param>
+        /// <param name="error">Mensaje de error devuelto si no es valido.</param>
+        /// <param name="reservaIdExcluida">Id de una reserva a excluir en la comprobacion (opcional, para modificaciones).</param>
+        /// <returns>True si la reserva es valida, false en caso contrario.</returns>
         public static bool ReservaFormularioValido(
             int socioId,
             int actividadId,
@@ -133,6 +172,14 @@ namespace Centro_ViewModel
         }
 
         //Validaciones para las actividades 
+        /// <summary>
+        /// Valida los datos del formulario de actividad y devuelve el aforo parseado.
+        /// </summary>
+        /// <param name="nombre">Nombre de la actividad.</param>
+        /// <param name="aforoMaxTexto">Texto con el aforo maximo a validar.</param>
+        /// <param name="error">Mensaje de error devuelto si no es valido.</param>
+        /// <param name="aforo">Salida con el aforo valido convertido a entero.</param>
+        /// <returns>True si el formulario es valido, false en caso contrario.</returns>
         public static bool ActividadFormularioValido(string nombre, string aforoMaxTexto, out string error, out int aforo)
         {
             error = "";

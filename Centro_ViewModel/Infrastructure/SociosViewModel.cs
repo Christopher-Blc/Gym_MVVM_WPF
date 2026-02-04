@@ -10,10 +10,17 @@ using System.Windows.Input;
 
 namespace Centro_ViewModel.Infrastructure
 {
+    /// <summary>
+    /// ViewModel encargado de la gestion de socios.
+    /// Proporciona la lista de socios, el socio seleccionado, los campos del formulario
+    /// y los comandos para crear, editar y eliminar socios.
+    /// </summary>
     public class SociosViewModel : BaseViewModel
     {
 
-        //Lista de socios y obtener el socio seleccionado del datagrid
+        /// <summary>
+        /// Lista de socios.
+        /// </summary>
         private List<Socios> listaSocios;
         public List<Socios> ListaSocios
         {
@@ -25,6 +32,10 @@ namespace Centro_ViewModel.Infrastructure
             }
         }
 
+        /// <summary>
+        /// Socio seleccionado en la vista.
+        /// Al establecerlo se cargan los campos del formulario.
+        /// </summary>
         private Socios socioSeleccionado;
         public Socios SocioSeleccionado
         {
@@ -51,7 +62,9 @@ namespace Centro_ViewModel.Infrastructure
         }
 
 
-        //Campos del formulario
+        /// <summary>
+        /// Valor del campo Nombre del formulario.
+        /// </summary>
         private string nombre;
         public string Nombre
         {
@@ -59,6 +72,9 @@ namespace Centro_ViewModel.Infrastructure
             set { nombre = value; OnPropertyChanged(nameof(Nombre)); }
         }
 
+        /// <summary>
+        /// Valor del campo Email del formulario.
+        /// </summary>
         private string email;
         public string Email
         {
@@ -66,6 +82,9 @@ namespace Centro_ViewModel.Infrastructure
             set { email = value; OnPropertyChanged(nameof(Email)); }
         }
 
+        /// <summary>
+        /// Estado activo del socio.
+        /// </summary>
         private bool isActive;
         public bool IsActive
         {
@@ -74,11 +93,26 @@ namespace Centro_ViewModel.Infrastructure
         }
 
 
-        //Commands
+        // Commands
+
+        /// <summary>
+        /// Comando para crear un nuevo socio.
+        /// </summary>
         public ICommand CrearSocioCommand { get; }
+
+        /// <summary>
+        /// Comando para editar un socio.
+        /// </summary>
         public ICommand EditarSocioCommand { get; }
+
+        /// <summary>
+        /// Comando para eliminar un socio.
+        /// </summary>
         public ICommand EliminarSocioCommand { get; }
 
+        /// <summary>
+        /// Constructor. Inicializa los comandos y recarga los datos.
+        /// </summary>
         public SociosViewModel()
         {
             CrearSocioCommand = new RelayCommand(Crear);
@@ -89,6 +123,10 @@ namespace Centro_ViewModel.Infrastructure
             Recargar();
         }
 
+        /// <summary>
+        /// Carga los socios desde la base de datos.
+        /// </summary>
+        /// <returns>void</returns>
         private void Recargar()
         {
             using (var contexto = new CentroDeportivoEntities())
@@ -97,6 +135,11 @@ namespace Centro_ViewModel.Infrastructure
             }
         }
 
+        /// <summary>
+        /// Valida los campos del formulario y crea un nuevo socio.
+        /// Al finalizar recarga la lista y limpia el formulario.
+        /// </summary>
+        /// <returns>void</returns>
         private void Crear()
         {
             if (!Validaciones.SocioFormularioValido(Nombre, Email, out var error))
@@ -123,8 +166,11 @@ namespace Centro_ViewModel.Infrastructure
         }
 
 
-
-        //Metodo para modificar
+        /// <summary>
+        /// Modifica el socio seleccionado con los valores del formulario.
+        /// Valida los datos y persiste los cambios en la base de datos.
+        /// </summary>
+        /// <returns>void</returns>
         private void Editar()
         {
             if (SocioSeleccionado == null)
@@ -154,6 +200,10 @@ namespace Centro_ViewModel.Infrastructure
             LimpiarFormulario();
         }
 
+        /// <summary>
+        /// Elimina el socio seleccionado de la base de datos.
+        /// </summary>
+        /// <returns>void</returns>
         private void Eliminar()
         {
             if (SocioSeleccionado == null)
@@ -175,6 +225,10 @@ namespace Centro_ViewModel.Infrastructure
             LimpiarFormulario();
         }
 
+        /// <summary>
+        /// Limpia los campos del formulario y deselecciona el socio.
+        /// </summary>
+        /// <returns>void</returns>
         private void LimpiarFormulario()
         {
             Nombre = "";
