@@ -34,13 +34,21 @@ Esta aplicación se ha desarrollado para poder gestionar un centro deportivo. Pe
 ## Capturas
 La aplicación cuenta con diferentes pantallas como:
 - Ventana principal
+
 ![Ventana principal](CapturasReadme/Menu.png)
+
 - Gestión de Actividades
+
 ![Ventana Actividades](CapturasReadme/Actividades.png)
+
 - Gestión de Socios
+  
 ![Ventana Socios](CapturasReadme/Socios.png)
+
 - Gestión de Reservas
+  
 ![Ventana Reservas](CapturasReadme/Reservas.png)
+
 
 ---
 
