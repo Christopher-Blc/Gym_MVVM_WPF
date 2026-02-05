@@ -1,23 +1,49 @@
-# Centro Deportivo – Aplicación WPF (MVVM)
+# Centro Deportivo (WPF & MVVM)
 
-Aplicación de escritorio desarrollada en **WPF** siguiendo el patrón **MVVM**, orientada a la gestión de un centro deportivo.  
-Permite administrar **socios**, **actividades** y **reservas**, utilizando **Entity Framework** para la persistencia de datos.
+## Descripción del proyecto
+Esta aplicación se ha desarrollado para poder gestionar un centro deportivo. Permite gestionar los socios , las actividades y las reservas del centro deportivo para así poder facilitar su administración. La aplicación ofrece una interfaz simple e intuitiva. También permite llegar a tres tipos de informes que se generan automáticamente.
 
-## Funcionalidades
-- Gestión de socios
-- Gestión de actividades y control de aforo
-- Gestión de reservas:
-  - Alta, modificación y eliminación
-  - Validación de fechas
-  - Control de aforo por actividad
-- Interfaz basada en DataGrid con binding y selección de elementos
+---
 
-## Arquitectura
-El proyecto sigue el patrón **MVVM**:
-- **Model**: entidades y acceso a datos
-- **View**: vistas WPF (XAML)
-- **ViewModel**: lógica de presentación y comandos
+## Tecnologías usadas
+- C#
+- .NET Framework
+- WPF (Windows Presentation Foundation)
+- Patrón MVVM
+- SQL Server
+- Entity Framework
+- Visual Studio
 
-## Ubicación del proyecto
-El archivo de solución (`.sln`) se encuentra en la siguiente carpeta: CentroDeportivo
+---
 
+## Instalación
+1. Clonar el repositorio desde GitHub.
+2. Abrir el proyecto con Visual Studio.
+3. Revisar la cadena de conexión a la base de datos en el archivo de configuración.
+4. Ejecutar el script SQL de creación de la base de datos si es necesario.
+
+---
+
+## Cómo ejecutar
+1. Abrir la solución en Visual Studio.
+2. Establecer el proyecto principal como proyecto de inicio.
+3. Ejecutar la aplicación.
+
+---
+
+## Capturas
+La aplicación cuenta con diferentes pantallas como:
+- Ventana principal
+![Ventana principal](Capturas/Menu.png)
+- Gestión de Actividades
+![Ventana Actividades](Capturas/Actividades.png)
+- Gestión de Socios
+![Ventana Socios](Capturas/Socios.png)
+- Gestión de Reservas
+![Ventana Reservas](Capturas/Reservas.png)
+
+---
+
+## Autores
+- Christopher Bolocan  
+  Proyecto realizado para el ciclo formativo de Desarrollo de Aplicaciones Multiplataforma (DAM).
